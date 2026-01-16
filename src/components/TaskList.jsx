@@ -25,6 +25,9 @@ const TaskList = () => {
   if (taskList.length === 0) {
     return <p className="task-card">No tasks added yet 🚀 Start by creating one above!</p>;
   }
+  if (filteredTasks.length === 0) {
+    return <p className="task-card">No tasks found</p>;
+  }
 
 
   
@@ -39,7 +42,7 @@ const TaskList = () => {
                   <div
                     ref={provided.innerRef}
                     {...provided.draggableProps}
-                    {...provided.dragHandleProps}
+                    // {...provided.dragHandleProps}
                     style={{ ...provided.draggableProps.style }}
                   >
                     <div className={`task-card ${item.completed ? 'completed' : ''} ${removingIds.includes(item.id) ? 'removing' : 'adding'}`}>
