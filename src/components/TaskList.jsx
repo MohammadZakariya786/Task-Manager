@@ -42,7 +42,7 @@ const TaskList = () => {
                   <div
                     ref={provided.innerRef}
                     {...provided.draggableProps}
-                    // {...provided.dragHandleProps}
+                    {...provided.dragHandleProps}
                     style={{ ...provided.draggableProps.style }}
                   >
                     <div className={`task-card ${item.completed ? 'completed' : ''} ${removingIds.includes(item.id) ? 'removing' : 'adding'}`}>
